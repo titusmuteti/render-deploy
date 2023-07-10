@@ -1,25 +1,23 @@
+databases:
+  - name: makawasco
+    ipAllowList: []
+    plan: free
+
 services:
   - type: web
-    name: my-ruby-app
-    buildCommand: bundle install
-    startCommand: bundle exec ruby app.rb
-    env:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: my-postgres-db
-          alias: primary
-      - key: DATABASE_USERNAME
-        fromDatabase:
-          name: my-postgres-db
-          alias: primary
-          property: username
-      - key: DATABASE_PASSWORD
-        fromDatabase:
-          name: my-postgres-db
-          alias: primary
-          property: password
-
-databases:
-  - name: my-postgres-db
-    type: postgresql
+    name: rails
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: bundle exec rails s
+    envVars:
+    - key: RAILS_MASTER_KEY
+      sync: false
+    - key: DATABASE_URL
+      fromDatabase:
+        name: makawasco
+        property: connectionString
+  - type: redis
+    name: redis
+    ipAllowList: []
     plan: free
+    maxmemoryPolicy: noeviction
