@@ -4,3 +4,8 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+task :seed do
+    load "#{Rails.root}/db/seeds.rb"
+end
+  
