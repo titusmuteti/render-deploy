@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
 
   def index
-    clients = People.all
+    clients = Person.all
     render json: clients, status: :ok
   end
 
