@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  resources :people
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # resources :people
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "/me", to: "people#index"
 
-  resources: people
 
   get 'render/index'
   root 'render#index'
