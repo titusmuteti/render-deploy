@@ -6,6 +6,8 @@ require_relative "config/application"
 Rails.application.load_tasks
 
 task :seed do
+    require_relative 'config/environment'
     load "#{Rails.root}/db/seeds.rb"
 end
+  
   
