@@ -1,7 +1,7 @@
 databases:
   - name: trial
-    databaseName: trial_d2rw
-    user: trial_d2rw_user
+    databaseName: trial_jcpa
+    user: trial_jcpa_user
 
 services:
   - type: web
