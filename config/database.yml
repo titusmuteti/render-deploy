@@ -23,14 +23,14 @@ default: &default
 
 development:
   <<: *default
-  # database: render_deploy_development
-  encoding: unicode
-  database: trial
-  host: localhost
-  pool: 5
-  username: postgress
-  password: postgress
-  role: MyRole
+  database: render_deploy_development
+  # encoding: unicode
+  # database: trial
+  # host: localhost
+  # pool: 5
+  # username: postgress
+  # password: postgress
+  # role: MyRole
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -88,12 +88,12 @@ test:
 #
 production:
   <<: *default
-  # url: <%= ENV["DATABASE_URL"] %>
-  adapter: postgresql
-  encoding: unicode
-  database: trial_Production
-  host: localhost
-  pool: 5
-  username: postgress
-  password: <%= ENV[ 'trial_password' ] %>
-  role: MyRole
+  url: <%= ENV["DATABASE_URL"] %>
+  # adapter: postgresql
+  # encoding: unicode
+  # database: trial_Production
+  # host: localhost
+  # pool: 5
+  # username: postgress
+  # password: <%= ENV[ 'trial_password' ] %>
+  # role: MyRole
