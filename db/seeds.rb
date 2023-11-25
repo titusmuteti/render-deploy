@@ -11,9 +11,9 @@ require 'active_record'
 ActiveRecord::Base.establish_connection(
   adapter: 'postgresql',
   host: 'localhost',
-  database: 'trial_jcpa',
-  username: 'trial_jcpa_user',
-  password: 'p2rpvKyOz4cfzLkRPP3urm52Amay0pUE'
+  database: 'sokodb_qahd',
+  username: 'sokodb_qahd_user',
+  password: '7tXOmg7miDzMyKNs9ZyLqBOiBWkwo4yO'
 )
 
 
